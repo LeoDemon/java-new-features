@@ -1,2 +1,2 @@
-## For new features from `jdk8` to `jdk17`
+## For Java new features from `jdk8` to `jdk17`
 
