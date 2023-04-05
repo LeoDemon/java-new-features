@@ -1,5 +1,4 @@
 allprojects {
-    apply plugin: 'java'
     apply plugin: 'idea'
 }
 
@@ -12,6 +11,8 @@ idea {
 }
 
 subprojects {
+    apply plugin: 'java-library'
+
     group = 'tech.demonlee'
     version = '1.0.0'
     sourceCompatibility = JavaVersion.VERSION_17
@@ -43,7 +44,6 @@ subprojects {
         testAnnotationProcessor(
                 "org.projectlombok:lombok:$lombokVersion"
         )
-
 
         testImplementation(
                 platform("org.junit:junit-bom:$junitVersion"),
