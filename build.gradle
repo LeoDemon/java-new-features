@@ -1,19 +1,61 @@
-plugins {
-    id 'java'
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
 }
 
-group = 'tech.demonlee'
-version = '1.0-SNAPSHOT'
-
-repositories {
-    mavenCentral()
+idea {
+    project {
+        jdkName = JavaVersion.VERSION_17
+        languageLevel = JavaVersion.VERSION_17
+        vcs = "Git"
+    }
 }
 
-dependencies {
-    testImplementation platform('org.junit:junit-bom:5.9.1')
-    testImplementation 'org.junit.jupiter:junit-jupiter'
+subprojects {
+    group = 'tech.demonlee'
+    version = '1.0.0'
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation(
+                "org.apache.logging.log4j:log4j-api:$log4j2Version",
+                "org.apache.logging.log4j:log4j-core:$log4j2Version",
+                "org.apache.logging.log4j:log4j-slf4j-impl:$log4j2Version"
+        )
+
+        compileOnly(
+                "org.projectlombok:lombok:$lombokVersion"
+        )
+
+        annotationProcessor(
+                "org.projectlombok:lombok:$lombokVersion"
+        )
+
+        testCompileOnly(
+                "org.projectlombok:lombok:$lombokVersion"
+        )
+
+        testAnnotationProcessor(
+                "org.projectlombok:lombok:$lombokVersion"
+        )
+
+
+        testImplementation(
+                platform("org.junit:junit-bom:$junitVersion"),
+                "org.junit.jupiter:junit-jupiter"
+        )
+    }
+
+    test {
+        useJUnitPlatform()
+    }
 }
 
-test {
-    useJUnitPlatform()
+wrapper {
+    gradleVersion = '8.0'
 }
