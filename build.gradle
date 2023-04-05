@@ -11,7 +11,7 @@ idea {
 }
 
 subprojects {
-    apply plugin: 'java-library'
+    apply plugin: 'java'
 
     group = 'tech.demonlee'
     version = '1.0.0'
