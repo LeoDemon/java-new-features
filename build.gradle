@@ -1,4 +1,5 @@
 allprojects {
+    apply plugin: 'java'
     apply plugin: 'idea'
 }
 
@@ -11,8 +12,6 @@ idea {
 }
 
 subprojects {
-    apply plugin: 'java'
-
     group = 'tech.demonlee'
     version = '1.0.0'
     sourceCompatibility = JavaVersion.VERSION_17
