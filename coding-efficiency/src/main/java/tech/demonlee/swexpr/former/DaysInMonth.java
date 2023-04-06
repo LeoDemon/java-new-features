@@ -7,6 +7,7 @@ import java.util.Calendar;
 /**
  * @author Demon.Lee
  * @date 2023-04-05 15:52
+ * @desc not recommend this old style
  */
 @Log4j2
 public class DaysInMonth {
