@@ -5,7 +5,7 @@ import lombok.extern.log4j.Log4j2;
 /**
  * @author Demon.Lee
  * @date 2023-04-06 08:52
- * @desc using enum to iterate all case
+ * @desc using enum to cover all possible case
  */
 @Log4j2
 public class ColorSwitch {
