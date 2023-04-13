@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 public class ModelTest {
 
     @Test
-    public void init_lombok_with_of() {
+    public void lombok_usage() {
         // `of` for all args constructor
         var model1 = Model.of(111, "Jack", "F");
 
