@@ -22,19 +22,19 @@ public class CollectionTest {
     @Test
     public void shallow_copy_for_string_list() {
         List<String> aaa = new ArrayList<>();
-        aaa.add("a1" );
-        aaa.add("a2" );
-        aaa.add("a3" );
+        aaa.add("a1");
+        aaa.add("a2");
+        aaa.add("a3");
 
         List<String> bbb = new ArrayList<>(aaa);
-        bbb.add("b1" );
-        bbb.remove("a2" );
+        bbb.add("b1");
+        bbb.remove("a2");
 
         log.info("aaa: {}", aaa);
         log.info("bbb: {}", bbb);
 
-        Assertions.assertTrue(aaa.contains("a2" ));
-        Assertions.assertFalse(aaa.contains("b1" ));
+        Assertions.assertTrue(aaa.contains("a2"));
+        Assertions.assertFalse(aaa.contains("b1"));
     }
 
     @Test
@@ -58,7 +58,7 @@ public class CollectionTest {
         Assertions.assertTrue(aaa.contains(jim));
         Assertions.assertFalse(aaa.contains(hanmei));
 
-        log.info("-----------------------" );
+        log.info("-----------------------");
         jim.age = 20;
         hanmei.age = 31;
         log.info("aaa: {}", aaa);
@@ -67,8 +67,8 @@ public class CollectionTest {
 
     @Getter
     @ToString
-    @NoArgsConstructor(staticName = "of" )
-    @AllArgsConstructor(staticName = "of" )
+    @NoArgsConstructor(staticName = "of")
+    @AllArgsConstructor(staticName = "of")
     static class Person {
         String id;
         String name;
@@ -86,7 +86,7 @@ public class CollectionTest {
 
         @Override
         public int hashCode() {
-            return id != null ? id.hashCode() : 0;
+            return Objects.nonNull(id) ? id.hashCode() : 0;
         }
     }
 }
