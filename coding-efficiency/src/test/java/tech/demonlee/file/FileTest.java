@@ -19,6 +19,8 @@ public class FileTest {
     public void should_create_tmp_dir() throws IOException {
         Path dir = Files.createTempDirectory("git-clone-");
         log.info("tmp dir: {}", dir);
+        log.info("tmp dir parent: {}", dir.getParent());
+        log.info("tmp dir file: {}", dir.getFileName());
         Assertions.assertTrue(Files.exists(dir));
         Files.delete(dir);
         Assertions.assertFalse(Files.exists(dir));
