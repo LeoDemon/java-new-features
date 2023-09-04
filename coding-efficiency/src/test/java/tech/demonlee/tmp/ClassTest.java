@@ -29,4 +29,12 @@ public class ClassTest {
         log.info("package name: " + clazz.getPackageName());
         log.info("----------------------");
     }
+
+    @Test
+    public void compareClass() {
+        log.info("int.class == Integer.TYPE? {}", int.class == Integer.TYPE);
+        log.info("int.class == Integer.class? {}", int.class == Integer.class);
+        log.info("long.class == Long.TYPE? {}", long.class == Long.TYPE);
+        log.info("long.class == Long.class? {}", long.class == Long.class);
+    }
 }
